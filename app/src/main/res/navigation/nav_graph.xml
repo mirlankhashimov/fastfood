@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@+id/main_screen">
+    <fragment
+        android:id="@+id/main_screen"
+        android:name="kg.mirlan.fastfood.ui.MainFragment"
+        tools:layout="@layout/main_fragment">
+        <action
+            android:id="@+id/action_main_screen_to_register_screen"
+            app:destination="@+id/register_screen"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/main_screen"/>
+        <action
+            android:id="@+id/action_main_screen_to_home_screen"
+            app:destination="@+id/home_screen"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/main_screen"
+            />
+    </fragment>
+
+    <fragment
+        android:id="@+id/home_screen"
+        android:name="kg.mirlan.fastfood.ui.home.HomeFragment"
+        tools:layout="@layout/home_fragment">
+        <action
+            android:id="@+id/action_home_screen_to_bottom_sheet_dialog_screen"
+            app:destination="@+id/shop_bottomSheet"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_home_screen_to_categories_screen"
+            app:destination="@+id/categories_screen"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+
+    </fragment>
+    <dialog
+        android:id="@+id/shop_bottomSheet"
+        android:name="kg.mirlan.fastfood.ui.shop.ShopDialogFragment"
+        tools:layout="@layout/bottom_sheet_shop_fragment">
+        <action
+            android:id="@+id/action_bottom_sheet_dialog_screen_to_add_shop_screen"
+            app:destination="@+id/add_shop_screen"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+          />
+    </dialog>
+
+    <fragment
+        android:id="@+id/categories_screen"
+        android:name="kg.mirlan.fastfood.ui.categories.CategoriesFragment"
+        tools:layout="@layout/categories_fragment">
+        <argument
+            android:name="pddNumber"
+            android:defaultValue="0"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/register_screen"
+        android:name="kg.mirlan.fastfood.ui.profile.RegisterFragment"
+        tools:layout="@layout/register_fragment">
+        <action
+            android:id="@+id/action_register_screen_to_main_screen"
+            app:destination="@+id/main_screen"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/register_screen"
+            app:popUpToInclusive="true"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+             />
+    </fragment>
+    <fragment
+        android:id="@+id/add_shop_screen"
+        android:name="kg.mirlan.fastfood.ui.shop.AddShopFragment"
+        tools:layout="@layout/add_shop_fragment">
+
+    </fragment>
+
+
+</navigation>

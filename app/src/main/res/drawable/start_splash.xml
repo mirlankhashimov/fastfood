@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape>
+            <gradient
+                android:startColor="@color/colorFirst"
+                android:endColor="@color/colorSecond"
+                android:angle="90" />
+        </shape>
+    </item>
+<!--    <item>-->
+<!--        <bitmap android:src="@drawable/start_image"-->
+<!--                android:gravity="bottom|fill_horizontal"/>-->
+<!--    </item>-->
+<!--    <item>-->
+<!--        <bitmap android:src="@drawable/start_logo"-->
+<!--                android:gravity="center"/>-->
+<!--    </item>-->
+<!--    <item>-->
+<!--        -->
+<!--    </item>-->
+
+</layer-list>
